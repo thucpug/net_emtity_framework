@@ -1,0 +1,3 @@
+﻿1: learn command ef migration
+2: learn automaper
+3: swager

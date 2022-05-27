@@ -1,0 +1,23 @@
+﻿1: add-migration
+2: update-database 
+3: mun update vê migration nào thì update-database namemigration
+4: Bạn chú ý là nếu muốn xóa DB (cẩn thận) để thực hiện lại thì có thể gõ lệnh:
+dotnet ef database drop -f
+
+
+
+Tương tự như trên tạo ra bản Migration tiếp theo:
+
+dotnet ef migrations add InitWebDB_V2
+Cập nhật vào DB
+
+dotnet ef database update InitWebDB_V2
+Xóa Migration cuối với lệnh
+
+dotnet ef migrations remove
+Liệt kê các Migration
+
+dotnet ef migrations list
+Nếu muốn tạo SQL Script cho Migration thì gõ
+
+dotnet ef migrations script --output migrations.sql
