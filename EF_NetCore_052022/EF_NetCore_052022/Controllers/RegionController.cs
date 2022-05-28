@@ -19,7 +19,7 @@ namespace EF_NetCore_052022.Controllers
             this.mapper = mapper;
         }
         [HttpGet]
-        [Route("all")]
+        [Route("All")]
         public IActionResult GetAllRegions()
         {
             //var regions = new List<Region>()
@@ -38,7 +38,7 @@ namespace EF_NetCore_052022.Controllers
             return Ok(regionDtos);
         }
         [HttpGet]
-        [Route("allasync")]
+        [Route("AllAsync")]
         public async Task<IActionResult> GetAllRegionsAsync()
         {
 
