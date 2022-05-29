@@ -1,4 +1,6 @@
-﻿namespace EF_NetCore_052022.Models.Domain
+﻿using System.Text.Json.Serialization;
+
+namespace EF_NetCore_052022.Models.Domain
 {
     public class Walk
     {
@@ -8,7 +10,9 @@
         public Guid RegionId { get; set; }
         public Guid WalkDifficultyId { get; set; }
         //Navigation walkDifficulty
+  
         public Region Region { get; set; }
-        public WalkDifficulty WalkDifficultie { get; set; }
+     
+        public WalkDifficulty WalkDifficulty { get; set; }
 }
 }

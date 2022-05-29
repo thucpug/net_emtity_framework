@@ -8,12 +8,13 @@ namespace EF_NetCore_052022.Profiles
     {
         public RegionProfile()
         {
-            CreateMap<Region, RegionDto>()
-                .ForMember(
-                dest => dest.IdDto, options => options.MapFrom(src => src.Id))
-                .ForMember(
-                dest => dest.NameDto, options => options.MapFrom(src => src.Name))
-                .ReverseMap();
+            //CreateMap<Region, RegionDto>()
+            //    .ForMember(
+            //    dest => dest.IdDto, options => options.MapFrom(src => src.Id))
+            //    .ForMember(
+            //    dest => dest.NameDto, options => options.MapFrom(src => src.Name))
+            //    .ReverseMap();
+            CreateMap<Region, RegionDto>().ReverseMap();
         }
     }
 }

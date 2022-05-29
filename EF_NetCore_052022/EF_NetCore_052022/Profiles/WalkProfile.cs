@@ -9,6 +9,8 @@ namespace EF_NetCore_052022.Profiles
         public WalkProfile()
         {
             CreateMap<Walk, WalkDto>().ReverseMap();
+            CreateMap<Walk, WalkRequestDto>().ReverseMap();
+            
         }
     }
 }

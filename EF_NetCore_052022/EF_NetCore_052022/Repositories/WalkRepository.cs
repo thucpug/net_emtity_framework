@@ -32,14 +32,20 @@ namespace EF_NetCore_052022.Repositories
             return walk;
         }
 
-        public async Task<List<Walk>> GetAllAsync()
+        public async Task<IEnumerable<Walk>> GetAllAsync()
         {
-            return await context.Walks.ToListAsync();
+            return await context.Walks
+                .Include(x => x.Region)
+                .Include(x => x.WalkDifficulty)
+                .ToListAsync();
         }
 
         public async Task<Walk> GetAsync(Guid guid)
         {
-            return await context.Walks.FirstOrDefaultAsync(x => x.Id == guid);
+            return await context.Walks
+                .Include(x => x.Region)
+                .Include(x => x.WalkDifficulty)
+                .FirstOrDefaultAsync(x => x.Id == guid);
         }
 
         public async Task<Walk> UpdateAsync(Guid guid, Walk walk)
@@ -51,6 +57,8 @@ namespace EF_NetCore_052022.Repositories
             }
             walkEntity.Name = walk.Name;
             walkEntity.Length = walk.Length;
+            walkEntity.RegionId = walk.RegionId;
+            walkEntity.WalkDifficultyId = walk.WalkDifficultyId;
             await context.SaveChangesAsync();
             return walkEntity;
         }

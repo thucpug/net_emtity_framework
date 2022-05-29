@@ -1,4 +1,6 @@
-﻿namespace EF_NetCore_052022.Models.Domain
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace EF_NetCore_052022.Models.Domain
 {
     public class Region
     {
