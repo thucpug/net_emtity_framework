@@ -14,7 +14,7 @@ Cập nhật vào DB
 dotnet ef database update InitWebDB_V2
 Xóa Migration cuối với lệnh
 
-dotnet ef migrations remove
+dotnet ef migrations remove || Remove-Migration
 Liệt kê các Migration
 
 dotnet ef migrations list
